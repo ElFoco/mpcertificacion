@@ -33,7 +33,7 @@
         return header("HTTP/1.1 200 OK");
         //return \Response::json(['HTTP/1.1 200 OK'], 200);
     } finally {
-        switch($_POST["type"]) {
+        switch($_REQUEST["type"]) {
             case "payment":
                 $datos = json_encode($_REQUEST["data"]);
                 $sqlquery = "INSERT INTO registros (registro) VALUES ('$datos');";
