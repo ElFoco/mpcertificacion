@@ -15,7 +15,7 @@
     $sqlquery = "INSERT INTO registros VALUES ('$datos');";
     $result = pg_query($pg_conn, $sqlquery);
     if ( $result ) {
-        echo  "Record Successfully Added!";
+        print  "Record Successfully Added!";
     }
     return header("HTTP/1.1 200 OK");
 
