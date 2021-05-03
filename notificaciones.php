@@ -35,7 +35,7 @@
     } finally {
         switch($_REQUEST["type"]) {
             case "payment":
-                $datos = json_encode($_REQUEST["data"]);
+                $datos = json_encode($_REQUEST);
                 $sqlquery = "INSERT INTO registros (registro) VALUES ('$datos');";
                 $result = pg_query($pg_conn, $sqlquery);
                 break;  
@@ -49,12 +49,12 @@
                 
                 break;
             case "test":
-                $datos = json_encode($_REQUEST["data"]);
+                $datos = json_encode($_REQUEST);
                 $sqlquery = "INSERT INTO registros (registro) VALUES ('$datos');";
                 $result = pg_query($pg_conn, $sqlquery);
                 break;
             default:
-                $datos = json_encode($_REQUEST["data"]);
+                $datos = json_encode($_REQUEST);
                 $sqlquery = "INSERT INTO registros (registro) VALUES ('$datos');";
                 $result = pg_query($pg_conn, $sqlquery);
                 break;
