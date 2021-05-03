@@ -36,6 +36,8 @@
         switch($_REQUEST["type"]) {
             case "payment":
                 $datos = json_encode($_REQUEST);
+                $payment = MercadoPago\Payment.find_by_id($_REQUEST["data_id"]);
+                $datos = json_encode($payment);
                 $sqlquery = "INSERT INTO registros (registro) VALUES ('$datos');";
                 $result = pg_query($pg_conn, $sqlquery);
                 break;  
