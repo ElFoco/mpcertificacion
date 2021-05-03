@@ -12,7 +12,7 @@
     $pg_conn = pg_connect(pg_connection_string_from_database_url());
     //$datos = json_encode($_POST["type"]);
     //$datos = json_encode($_POST["data"]);
-    $datos = $_REQUEST["type"];
+    /*$datos = $_REQUEST["type"];
     $sqlquery = "INSERT INTO registros VALUES ('$datos')";
     $result = pg_query($pg_conn, "INSERT  INTO registros (registro) VALUES ('$datos');");
     if ( $result ) {
@@ -21,7 +21,7 @@
     else{
         print  "No se pudo ejecutar el query";
     }
-    return header("HTTP/1.1 200 OK");
+    return header("HTTP/1.1 200 OK");*/
 
     //Log::info($request);
     //Log::debug($request);
@@ -35,7 +35,7 @@
     } finally {
         switch($_POST["type"]) {
             case "payment":
-                $datos = json_encode($_POST["data"]);
+                $datos = json_encode($_REQUEST["data"]);
                 $sqlquery = "INSERT INTO registros (registro) VALUES ('$datos');";
                 $result = pg_query($pg_conn, $sqlquery);
                 break;  
@@ -49,12 +49,12 @@
                 
                 break;
             case "test":
-                $datos = json_encode($_POST["data"]);
+                $datos = json_encode($_REQUEST["data"]);
                 $sqlquery = "INSERT INTO registros (registro) VALUES ('$datos');";
                 $result = pg_query($pg_conn, $sqlquery);
                 break;
             default:
-                $datos = json_encode($_POST["data"]);
+                $datos = json_encode($_REQUEST["data"]);
                 $sqlquery = "INSERT INTO registros (registro) VALUES ('$datos');";
                 $result = pg_query($pg_conn, $sqlquery);
                 break;
