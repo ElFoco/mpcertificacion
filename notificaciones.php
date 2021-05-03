@@ -1,4 +1,5 @@
 <?php
+    require __DIR__ .  '/vendor/autoload.php';
     MercadoPago\SDK::setAccessToken("TEST-1900672380498140-050219-a070982966cb84bb9bfbc1e7d1490d39-752901559");
     $token = "TEST-1900672380498140-050219-a070982966cb84bb9bfbc1e7d1490d39-752901559";
 
@@ -12,6 +13,9 @@
 
     //Log::info($request);
     //Log::debug($request);
+
+    print "Entro en el notificaciones";
+    return;
 
     try {
         return header("HTTP/1.1 200 OK");
