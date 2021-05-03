@@ -36,7 +36,22 @@
         switch($_REQUEST["type"]) {
             case "payment":
                 $datos = json_encode($_REQUEST);
-                $sqlquery = "INSERT INTO registros (registro) VALUES ('$datos');";
+                $client = new \GuzzleHttp\Client();
+                $headers = [
+                    'Authorization' => 'Bearer '.$token
+                ];
+                
+                //$ruta = "https://api.mercadopago.com/v1/payments/1234587832";
+                $ruta = "https://api.mercadopago.com/v1/payments/".$_REQUEST["data_id"];
+                //$request = $client->get($ruta);
+                //$response = $request->getBody();
+
+                $res = $client->request('GET',$ruta, [
+                    'headers' => $headers
+                ]);
+                //$response = Http::get('https://api.mercadopago.com/v1/payments/'+$request->id);
+                $obj = $res->getBody();
+                $sqlquery = "INSERT INTO registros (registro) VALUES ('$obj');";
                 $result = pg_query($pg_conn, $sqlquery);
                 break;  
             case "plan":
