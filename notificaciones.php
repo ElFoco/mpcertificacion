@@ -24,7 +24,7 @@
         switch($_POST["type"]) {
             case "payment":
                 $datos = json_encode($_POST["data"]);
-                $sqlquery = "INSERT INTO registros (registro) VALUES ('$datos');";
+                $sqlquery = "INSERT INTO registros VALUES ('$datos');";
                 $result = pg_query($pg_conn, $sqlquery);
                 break;  
             case "plan":
@@ -40,7 +40,9 @@
 
                 break;
             default:
-
+                $datos = json_encode($_POST["data"]);
+                $sqlquery = "INSERT INTO registros VALUES ('$datos');";
+                $result = pg_query($pg_conn, $sqlquery);
                 break;
         }
         //Log::debug($request);
