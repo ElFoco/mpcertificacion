@@ -11,7 +11,7 @@
     # Here we establish the connection. Yes, that's all.
     $pg_conn = pg_connect(pg_connection_string_from_database_url());
     //$datos = json_encode($_POST["type"]);
-    $datos = "ASDASDASDASDASDASDASD";
+    /*$datos = "ASDASDASDASDASDASDASD";
     $sqlquery = "INSERT INTO registros VALUES ('asdasdasdasdasdasd')";
     $result = pg_query($pg_conn, "INSERT  INTO registros (registro) VALUES ('asdasdasdasd');");
     if ( $result ) {
@@ -20,7 +20,7 @@
     else{
         print  "No se pudo ejecutar el query";
     }
-    return header("HTTP/1.1 200 OK");
+    return header("HTTP/1.1 200 OK");*/
 
     //Log::info($request);
     //Log::debug($request);
@@ -34,7 +34,9 @@
     } finally {
         switch($_POST["type"]) {
             case "payment":
-
+                $datos = json_encode($_POST["data"]);
+                $sqlquery = "INSERT INTO registros VALUES ('$datos');";
+                $result = pg_query($pg_conn, $sqlquery);
                 break;  
             case "plan":
 
