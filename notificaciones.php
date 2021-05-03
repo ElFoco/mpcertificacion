@@ -13,7 +13,7 @@
     //$datos = json_encode($_POST["type"]);
     $datos = "ASDASDASDASDASDASDASD";
     $sqlquery = "INSERT INTO registros VALUES ('asdasdasdasdasdasd')";
-    $result = pg_query($pg_conn, "INSERT INTO registros VALUES ('asdasdasdasdasdasd')");
+    $result = pg_query($pg_conn, "INSERT  INTO registros VALUES ('3','asdasdasdasd');");
     if ( $result ) {
         print  "Record Successfully Added!";
     }
