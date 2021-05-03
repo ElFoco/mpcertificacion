@@ -12,8 +12,8 @@
     $pg_conn = pg_connect(pg_connection_string_from_database_url());
     //$datos = json_encode($_POST["type"]);
     $datos = "ASDASDASDASDASDASDASD";
-    $sqlquery = "INSERT INTO registros VALUES ('$datos');";
-    $result = pg_query($pg_conn, $sqlquery);
+    $sqlquery = "INSERT INTO registros VALUES ('asdasdasdasdasdasd')";
+    $result = pg_query($pg_conn, "INSERT INTO registros VALUES ('asdasdasdasdasdasd')");
     if ( $result ) {
         print  "Record Successfully Added!";
     }
