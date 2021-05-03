@@ -141,11 +141,11 @@
                                             $preference->items = array($item);
 
 
-                                            /*$preference->back_urls = array(
-                                            "success" => "http://localhost:8000/pruebamp",
-                                            "failure" => "http://localhost:8000/pruebamp", 
-                                            "pending" => "http://localhost:8000/pruebamp"
-                                            );*/
+                                            $preference->back_urls = array(
+                                            "success" => "https://luisley-mp-commerce-php.herokuapp.com/",
+                                            "failure" => "https://luisley-mp-commerce-php.herokuapp.com/", 
+                                            "pending" => "https://luisley-mp-commerce-php.herokuapp.com/"
+                                            );
 
 
 
