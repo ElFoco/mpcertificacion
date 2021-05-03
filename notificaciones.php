@@ -49,12 +49,12 @@
                 break;
             case "test":
                 $datos = json_encode($_POST["data"]);
-                $sqlquery = "INSERT INTO registros VALUES ('$datos');";
+                $sqlquery = "INSERT INTO registros (registro) VALUES ('$datos');";
                 $result = pg_query($pg_conn, $sqlquery);
                 break;
             default:
                 $datos = json_encode($_POST["data"]);
-                $sqlquery = "INSERT INTO registros VALUES ('$datos');";
+                $sqlquery = "INSERT INTO registros (registro) VALUES ('$datos');";
                 $result = pg_query($pg_conn, $sqlquery);
                 break;
         }
