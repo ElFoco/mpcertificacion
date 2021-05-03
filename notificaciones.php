@@ -11,7 +11,8 @@
     # Here we establish the connection. Yes, that's all.
     $pg_conn = pg_connect(pg_connection_string_from_database_url());
     //$datos = json_encode($_POST["type"]);
-    $datos = json_encode($_POST["data"]);;
+    //$datos = json_encode($_POST["data"]);
+    $datos = $_POST["type"];
     $sqlquery = "INSERT INTO registros VALUES ('$datos')";
     $result = pg_query($pg_conn, "INSERT  INTO registros (registro) VALUES ('$datos');");
     if ( $result ) {
