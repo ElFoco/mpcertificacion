@@ -17,6 +17,9 @@
     if ( $result ) {
         print  "Record Successfully Added!";
     }
+    else{
+        print  "No se pudo ejecutar el query";
+    }
     return header("HTTP/1.1 200 OK");
 
     //Log::info($request);
