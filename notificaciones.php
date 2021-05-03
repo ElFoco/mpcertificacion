@@ -14,8 +14,8 @@
     //Log::info($request);
     //Log::debug($request);
 
-    print "Entro en el notificaciones";
-    return;
+    //print "Entro en el notificaciones";
+    //return;
 
     try {
         return header("HTTP/1.1 200 OK");
